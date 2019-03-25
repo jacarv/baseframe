@@ -1,0 +1,49 @@
+|{% set bodyClass = bodyClass is defined ? bodyClass : '' %}
+|{% set pageId = pageId is defined ? pageId : '' %}
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+    meta(name="apple-touch-fullscreen" content="yes")
+    
+    //- |{% if entry is defined %}
+    //- |  {% do craft.sproutSeo.meta({ 
+    //- |      id: entry.id
+    //- |  }) %}
+    //- |  {{ craft.sproutSeo.optimize() }}
+    //- |{% endif %}
+    
+    //- |{% includeCssFile '/site.css' %}
+    link(rel="stylesheet" type="text/css" href="/css/site.css")
+    
+    //- Facebook Social
+    meta(property='og:url', content='http://jacarvalho.com')
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='Alex Carvalho')
+    meta(property='og:description', content='Alex Carvalho')
+    meta(property='og:image', content='http://jacarvalho.com/')
+    //- Twitter Social
+    meta(name='twitter:card', content='summary_large_image')
+    meta(name='twitter:site', content='@alexcarvalho')
+    meta(name='twitter:creator', content='@alexcarvalho')
+    meta(name='twitter:title', content='Alex Carvalho')
+    meta(name='twitter:description', content='Alex Carvalho')
+    meta(name='twitter:image', content='http://jacarvalho.com/')
+    script(src='https://use.typekit.net/qyg6zhv.js')
+    script.
+      try{Typekit.load({ async: true });}catch(e){}
+body(data-page-id="{{ pageId }}" class="{{ pageId }} {{ bodyClass }}")
+  |{% include 'globals/_svg-grid' %}
+  |{% include 'globals/_header' %}
+
+  |{% block content %}
+  |{% endblock %}
+  |{% include 'globals/_footer' %}
+  script(src="/site.js")
+
+
+  |{% if 'dev.' in siteUrl %}
+  //- .mq-tracker
+  //- |{% else %}
+  //- | {{ website.googleAnalyticsCode|raw }}
+  |{% endif %}

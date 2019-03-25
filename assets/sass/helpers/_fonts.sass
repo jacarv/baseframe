@@ -1,0 +1,101 @@
+%proxima-nova-font 
+  font-family: "proxima-nova",sans-serif
+%chaparral-pro-font 
+  font-family: "chaparral-pro",sans-serif
+%futura-font
+  font-family: "futura-pt", sans-serif
+
+html 
+  margin: 0 auto
+  // font-weight: 300
+  @extend %futura-font
+  font-size: 13px
+
+  @include medium 
+    font-size: 14px
+  
+  @include large
+    font-size: 15px
+
+  @include x-large 
+    font-size: 16px
+  
+
+  @include xx-large 
+    font-size: 20px
+  
+
+
+h1, h2, h3, h4, h5, h6, li, p, small, span, blockquote, cite 
+  line-height: 1.25em
+
+  &.heading-1 
+    font-size: 1.6em
+    color: white
+    +medium 
+      font-size: 2em
+    +x-large
+      // font-size: 1.6em
+    +xx-large
+      font-size: 2em
+  
+
+  &.heading-2
+    font-size: 1.4em
+    +medium 
+      font-size: 1.8em
+    +x-large
+      font-size: 2em
+    +xx-large
+      font-size: 2.4em
+  
+  &.heading-3 
+    font-size: 1.2em
+    +medium 
+      font-size: 1.4em
+    +x-large
+      font-size: 1.6em
+    +xx-large
+      font-size: 2em
+  
+  &.heading-4 
+    font-size: 1em
+    +medium 
+      font-size: 1.2em
+    +x-large
+      font-size: 1.4em
+    +xx-large
+      font-size: 1.6em
+  &.heading-5
+    font-size: 1em
+
+h1,h2,h3,h4,h5
+  font-weight: 600
+  // @extend %proxima-nova-font
+
+h1
+  @include large
+    line-height: 1em
+  
+// p, li
+//   @extend %chaparral-pro-font
+
+li, p, small
+  margin-top: 1em
+
+  &:first-of-type
+    margin-top: 0
+
+a, img
+  text-decoration: none
+  color: inherit
+
+.copy
+  p
+    strong
+      font-weight: 400
+  ul,ol
+    padding-left: 1em
+  ol
+    list-style: decimal
+
