@@ -1,48 +1,98 @@
 header.nav
   display: none
-  +medium
-    display: initial
   height: 6.75em
   width: 100%
   position: absolute
+
+  +medium
+    display: initial
+
   ul
     padding-left: 3em
+
   svg
     width: 6em
+
   li
     margin: 0
     color: white
     font-size: 1.25em
+
   .btn
     padding: 1.5em 1em
+
   .nav-wrap
     justify-content: space-between
+
   .menu-items
     display: flex
     align-items: center
     justify-content: space-between
 
-  .logo-wrap a
-    @extend %futura-font
-    font-weight: 600
-    font-size: 1.75em
+  .logo-wrap
+
+    a
+      @extend %futura-font
+      font-weight: 600
+      font-size: 1.75em
+
 header.mobile-nav
   height: 6.75em
   width: 100%
-  position: absolute
-  // .mobile-menu-wrap
-  //   svg
-  //     width: 2em
+  position: fixed
+  background: white
+  border-bottom: 1px solid gray
+  top: 0
+
   .logo-wrap
+    z-index: 1000
     svg
       width: 8em
+
     a
       @extend %futura-font
       font-weight: 600
       font-size: 1.75em
   .nav-wrap
     justify-content: space-between
+    position: relative
+
+    .mobile-menu-wrap
+      width: 100%
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      height: 100%
+      display: flex
+      justify-content: flex-end
+      align-items: center
+
+      .menu-icon
+        padding-right: 2em
+      .close-icon
+        padding-right: 2em
+        display: none
+
+      .menu-wrap
+        position: absolute
+        right: 0
+        width: 100%
+        top: 6.75em
+        display: none
+
+        .menu-items
+          padding: 1.5em
+          width: 100%
+          background: white
+          font-size: 1.25em
+          li:last-of-type a
+            background: gray
+
+
+
   .heading-2
     font-size: 3em
+
   +medium
     display: none

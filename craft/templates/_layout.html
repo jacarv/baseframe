@@ -6,18 +6,43 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta name="apple-touch-fullscreen" content="yes"/>
+    <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="/css/site.css"/>
+    <!-- Facebook Social-->
     <meta property="og:url" content="http://jacarvalho.com"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Alex Carvalho"/>
     <meta property="og:description" content="Alex Carvalho"/>
     <meta property="og:image" content="http://jacarvalho.com/"/>
+    <!-- Twitter Social-->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@alexcarvalho"/>
     <meta name="twitter:creator" content="@alexcarvalho"/>
     <meta name="twitter:title" content="Alex Carvalho"/>
     <meta name="twitter:description" content="Alex Carvalho"/>
     <meta name="twitter:image" content="http://jacarvalho.com/"/>
+    <!-- Favicon-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicon/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicon/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/favicon/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicon/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/images/favicon/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/favicon/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/favicon/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/favicon/apple-touch-icon-152x152.png"/>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-196x196.png" sizes="196x196"/>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-128.png" sizes="128x128"/>
+    <meta name="application-name" content=" "/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png"/>
+    <meta name="msapplication-square70x70logo" content="/images/favicon/mstile-70x70.png"/>
+    <meta name="msapplication-square150x150logo" content="/images/favicon/mstile-150x150.png"/>
+    <meta name="msapplication-wide310x150logo" content="/images/favicon/mstile-310x150.png"/>
+    <meta name="msapplication-square310x310logo" content="/images/favicon/mstile-310x310.png"/>
+    <!-- Typekit-->
     <script src="https://use.typekit.net/qyg6zhv.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
@@ -25,8 +50,12 @@
 <body data-page-id="{{ pageId }}" class="{{ pageId }} {{ bodyClass }}">
   {% include 'globals/_svg-grid' %}
   {% include 'globals/_header' %}
-  {% block content %}
-  {% endblock %}
-  {% include 'globals/_footer' %}
-  <script src="/site.js"></script>{% if 'dev.' in siteUrl %}{% endif %}
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>{% include 'globals/_footer' %}
+  <script src="/site.js"></script>{% if 'dev.' in siteUrl %}
+  <div class="mq-tracker"></div>{% else %}
+  {{ website.googleAnalyticsCode|raw }}
+  {% endif %}
 </body>

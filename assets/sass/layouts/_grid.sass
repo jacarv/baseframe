@@ -1,103 +1,99 @@
 //Settings
 $default-gutter:  1%   //left and right padding
-// $breakpoints:     small medium; //small medium large x-large xx-large xxx-large;
 $max-width:       74em  //regular width
 $max-width-plus:  80em  //wide width
 
-@mixin grid-items() 
-  &--full 
+@mixin grid-items()
+  &--full
     width: 100%
-  
-  &--half 
+
+  &--half
     width: 50%
     margin-left: 0
-    &--offset 
+    &--offset
       margin-left: 50%
-  
-  &--third 
+
+  &--third
     width: 33.33333333%
     margin-left: 0
-    &x2 
+    &x2
       width: 66.66666667%
-    &--offset 
+    &--offset
       margin-left: 33.33333333%
-      &x2 
+      &x2
         margin-left: 66.66666667%
 
-  &--fourth 
+  &--fourth
     width: 25%
     margin-left: 0
-    &x3 
+    &x3
       width: 75%
-    &--offset 
+    &--offset
       margin-left: 25%
-      &x3 
+      &x3
         margin-left: 75%
-   
-  &--fifth 
+
+  &--fifth
     width: 20%
-    &x2 
+    &x2
       width: 40%
     &x3
       width: 60%
-    &x4 
+    &x4
       width: 80%
- 
-  &--sixth 
+
+  &--sixth
     width: 16.66666667%
-    &x5 
+    &x5
       width: 83.33333335%
 
-  &--seventh 
+  &--seventh
     width: 14.28571429%
 
-  &--eighth 
+  &--eighth
     width: 12.5%
-    &x7 
+    &x7
       width: 87.5%
- 
-  &--ninth 
-    width: 11.11111111%
-    &x2 
-      width: 22.22222222%
- 
-    // &x3 
-    //   width: 33.33333333%
-    
-    // &x4 
-    //   width: 44.44444444%
 
-  &--tenth 
+  &--ninth
+    width: 11.11111111%
+
+    &x2
+      width: 22.22222222%
+
+    &x3
+      width: 33.33333333%
+
+    &x4
+      width: 44.44444444%
+
+  &--tenth
     width: 10%
-    &x9 
+    &x9
       width: 90%
-    // &x2 
-    //   width: 20%
-    &x3 
+    &x3
       width: 30%
-    // &x4 
-    //   width: 40%
-    
-  &--eleventh 
+
+  &--eleventh
     width: 9.090909091%
 
-  &--twelveth 
+  &--twelveth
     width: 8.333333333%
-    &x2 
+    &x2
       width: 16.666666666%
-    &x3 
+    &x3
       width: 24.999999999%
-    &x4 
+    &x4
       width: 33.333333332%
-    &x5 
+    &x5
       width: 41.666666665%
   &--custom
     width: 24%
-      
-  &--reset 
+
+  &--reset
     width: auto
 
-.grid-row 
+.grid-row
   max-width: $max-width
   width: 100%
   margin: 0 auto
@@ -106,44 +102,43 @@ $max-width-plus:  80em  //wide width
   &--nowrap
     @extend .grid-row
     flex-wrap: nowrap
-  
-  .gs 
+
+  .gs
     +grid-items
 
-  +medium 
-    .gm 
+  +medium
+    .gm
       +grid-items
-  
-  +large 
-    .gl 
+
+  +large
+    .gl
       +grid-items
-  
-  +x-large 
-    .gxl 
+
+  +x-large
+    .gxl
       +grid-items
-  
-  +xx-large 
-    .gxxl 
+
+  +xx-large
+    .gxxl
       +grid-items
-  
-  +xxx-large 
-    .gxxxl 
+
+  +xxx-large
+    .gxxxl
       +grid-items
 
 .grid-row-children-alignment
+
   &--centered
     align-items: center
     justify-content: center
     height: 100%
-  
+
   &--vcentered
     align-items: center
     height: 100%
-  
+
   &--hcentered
     justify-content: center
-  
-
 
 .grid-column
   @extend .grid-row
@@ -152,47 +147,35 @@ $max-width-plus:  80em  //wide width
 .grid-row-width
   &--narrow
     max-width: 68em
-  
+
   &--wide
     max-width: $max-width-plus
-  
+
   &--widest
     max-width: none
-  
 
-
-.grid-row-padding 
-  &--sides-only 
+.grid-row-padding
+  &--sides-only
     padding: 0 20px
-    +medium 
+    +medium
       padding: 0 30px
-    +large 
+    +large
       padding: 0 30px
-    +xxx-large 
+    +xxx-large
       padding: 0
 
-  &--short 
+  &--short
     padding: 1em 2em
-    +medium 
-      // padding: 1em 3em
-    +large
-      // padding: 1.5em 6em
-    +x-large
-      // padding: 1.75em 9em
-    +xx-large 
+    +xx-large
       padding: 1.4em
-    +xxx-large 
-      // padding: 2em 14.5em
 
-
-  
-  &--full 
+  &--full
     padding: 1.25em 1em
-    +medium 
+    +medium
       padding: 1.75em 1.5em
-    +x-large 
+    +x-large
       padding: 2.25em 30px
-    +xx-large 
+    +xx-large
       padding: 3.5em 30px
-    +xxx-large 
+    +xxx-large
       padding: 3.5em 0

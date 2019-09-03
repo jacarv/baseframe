@@ -9,34 +9,38 @@ header.nav
         .gm--sixthx5.gl--fourthx3.gxl--fifthx3
           ul.menu-items
            li
-              a(href="/") Menu Item
+              a(href="#section1") Section 1
             li
-              a(href="/") Menu Item
+              a(href="#section2") Section 2
             li
-              a(href="/") Menu Item
+              a(href="#section3") Section 3
             li
-              a(href="/") Menu Item
+              a(href="#section4") Section 4
             li
               a.btn.btn-1.btn-1a(href="/") Call to Action
 
 
 header.mobile-nav
-  .grid-row
-    .gs--full
-      .grid-row.grid-row-children-alignment--vcentered.grid-row-padding--short.grid-row-width--wide.nav-wrap
-        .logo-wrap
-          a(href="/") LOGO
-        .mobile-menu-wrap
-          svg(viewBox="0 0 24 24" role="link" class="icon #icon-hamburger")
-            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-hamburger")
-          //- ul.menu-items
-          //-  li
-          //-     a(href="/about") About
-          //-   li
-          //-     a(href="/services") Services
-          //-   li
-          //-     a(href="/case-studies") Case Studies
-          //-   li
-          //-     a(href="/blog") Blog
-          //-   li
-          //-     a.btn.btn-1(href="/") Request Consultation
+  .grid-row.grid-row-children-alignment--vcentered.grid-row-padding--short.grid-row-width--wide.nav-wrap
+    .logo-wrap
+      a(href="/") LOGO
+    .mobile-menu-wrap
+      .menu-icon
+        svg(viewBox="0 0 24 24" role="link" class="icon #icon-hamburger")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-hamburger")
+      .close-icon
+        svg(viewBox="0 0 100 125" role="link" class="icon #icon-close")
+          use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close")
+      .menu-wrap
+        ul.menu-items
+          li
+            a(href="#section1") Menu Item
+          li
+            a(href="#section2") Menu Item
+          li
+            a(href="#section3") Menu Item
+          li
+            a(href="#section4") Menu Item
+          li
+            a.btn.btn-1.btn-1a(href="/") Call to Action
+        

@@ -1,41 +1,50 @@
 //- three-column-services-blocks
 
 section.tcsb
+
   .heading-2
     font-size: 1.75em
     margin-top: 2.1em
+
   p
     font-size: 1.25em
+
   svg
     width: 7.75em
     margin-top: 3.75em
-  .section-wrap
-    // padding-top: 0
+
   .service-wrap
     height: 34.75em
-    background: url('https://placeholdit.imgix.net/~text?txtsize=33&w=450&h=660')
+    background: url('https://via.placeholder.com/450x600/808080/808080')
     background-position: center
     width: 100%
     margin: 1em 0
+
     +medium
       width: calc(33.33% - .75em)
       margin: 0
+
       p
         height: 6em
+
   .text-wrap
     display: flex
     justify-content: space-between
     flex-direction: column
     align-items: center
     height: 16em
+
   .blocks-wrap
     justify-content: space-between
     text-align: center
     flex-direction: column
+
     +medium
       flex-direction: initial
 
 body.home
+
   section.tcsb
+
     .section-wrap
       padding-top: 0
